@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  xGDM-MonSuite Daemon (Base)
+  %%
+  Copyright (C) 2022 - 2025 grit GmbH
+  %%
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
+  #L%
+  -->
+
+<wfs:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/wfs.xsd http://www.example.com/obj http://127.0.0.1/service/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;OUTPUTFORMAT=text%2Fxml%3B+subtype%3Dgml%2F3.1.1&amp;TYPENAME=obj:Blattschnitt_TK10&amp;NAMESPACE=xmlns(obj=http%3A%2F%2Fwww.example.com%2Fobj)" xmlns:wfs="http://www.opengis.net/wfs" timeStamp="2018-06-28T09:17:46Z" xmlns:gml="http://www.opengis.net/gml" numberOfFeatures="2">
+  <gml:boundedBy>
+    <gml:Envelope srsName="EPSG:31468">
+      <gml:lowerCorner>1 2</gml:lowerCorner>
+      <gml:upperCorner>3 4</gml:upperCorner>
+    </gml:Envelope>
+  </gml:boundedBy>
+  <gml:featureMember>
+    <obj:Blattschnitt_TK10 xmlns:obj="http://www.example.com/obj" gml:id="ID_OBJ_BLATTSCHNITT_TK10.1234-NW">
+      <obj:id>1234-NW</obj:id>
+      <obj:tk_25_id>1234</obj:tk_25_id>
+    </obj:Blattschnitt_TK10>
+  </gml:featureMember>
+  <gml:featureMember>
+    <obj:Blattschnitt_TK10 xmlns:obj="http://www.example.com/obj" gml:id="ID_OBJ_BLATTSCHNITT_TK10.1234-NO">
+      <obj:id>1234-NO</obj:id>
+      <obj:tk_25_id>1234</obj:tk_25_id>
+    </obj:Blattschnitt_TK10>
+  </gml:featureMember>
+</wfs:FeatureCollection>

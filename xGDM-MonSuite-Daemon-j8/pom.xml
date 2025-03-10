@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.grit</groupId>
+	<artifactId>xgdm-monsuite-daemon-j8</artifactId>
+	<packaging>war</packaging>
+	<name>xGDM-MonSuite Daemon deegree.PRO</name>
+
+	<parent>
+		<groupId>de.grit</groupId>
+		<artifactId>xgdm-monsuite-daemon</artifactId>
+		<version>1.5.22-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<grit.warzip.fileName>monitoring-service.war</grit.warzip.fileName>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>gdi-daemon</wtpContextName>
+					<!-- <wtpContextName>monitoring-service</wtpContextName> -->
+					<!-- Testresourcen im Tomcat bereitstellen. ACHTUNG Version 2.9.grit -->
+					<webResources>
+						<classes>src/test/resources</classes>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>assembly-warzip</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptorRefs>
+								<descriptorRef>grit-warzip</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>${project.basedir}\src\main\webapp\WEB-INF\web.xml</webXml>
+					<webResources>
+						<resource>
+							<directory>../</directory>
+							<includes>
+								<include>LICENSE.md</include>
+							</includes>
+							<targetPath>WEB-INF/</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId>de.grit</groupId>
+			<artifactId>xgdm-monsuite-daemon-base</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>
